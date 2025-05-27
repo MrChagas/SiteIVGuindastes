@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.V. Guindastes - Desde 1983</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+    <section class="sub-header">
+        <!-- Navegação -->
+        <nav>
+            <a href="index.html"><img src="image/logoIV.png"></a>
+
+            <div class="nav-links" id="navLinks">
+              <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">SOBRE</a></li>
+                    <li><a href="guindastes.html">GUINDASTES</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                    <li><a href="https://ivguindastes.vagas.solides.com.br/" target="_blank">VAGAS</a></li>
+                    <li><a href="intranet.html">INTRANET</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Sobre Nós</h1>
+    </section>
+    
+    <!-- Sobre Nós - Conteúdo -->
+        <section class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h1>Toneladas de Histórias</h1>
+                    <p>Fundada em 1983 pelo saudoso Ivo Boff, tendo como atividade principal e sendo referência em transportes de cargas pesadas até o ano de 1994, passando então a focar em movimentação de cargas com guindastes. Hoje se destaca entre as 5 maiores especialistas em montagem e manutenção de aerogeradores em todo território nacional, operando guindastes até 900t.</p>
+                    <a href="" class="hero-btn red-btn">Explore Mais</a>
+                </div>
+                <div class="about-col">
+                    <img src="image/about.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão 3 / Valores -->
+    <section class="politica">
+
+        <h1>Nossa Política</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis ex est maxime? Soluta, officia ipsum accusantium quod doloremque a fugit ducimus dolorem dolorum quasi velit quae asperiores at eos saepe.</p>
+
+        <div class="politica-row">
+            <div class="politica-col">
+                    <h3>Missão</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+                </div>
+                <div class="politica-col">
+                    <h3>Visão</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+                </div>
+                <div class="politica-col">
+                    <h3>Valores</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+                </div>
+                <div class="politica-col">
+                    <h3>Valores</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>Sobre Nós</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas reiciendis pariatur sed, voluptatem ab,<br> id reprehenderit delectus sunt perspiciatis dolore ipsa sapiente quibusdam quam aspernatur eius!<br> Veniam quidem et doloribus.</p>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/ivguindastes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ivguindastes" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/ivlinkeguindastes" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="dev">
+            <p>Desenvolvido por <a href="https://github.com/MrChagas" target="_blank">Renan Chagas</a></p>
+        </div>
+        
+    </section>
+
+<!-- JavaScript para esconder o menu -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>

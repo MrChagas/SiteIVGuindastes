@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.V. Guindastes - Desde 1983</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+    <section class="sub-header-guind">
+        <!-- Navegação -->
+        <nav>
+            <a href="index.html"><img src="image/logoIV2.png"></a>
+
+            <div class="nav-links" id="navLinks">
+              <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="guindastes.html">GUINDASTES</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                    <li><a href="https://ivguindastes.vagas.solides.com.br/" target="_blank">VAGAS</a></li>
+                    <li><a href="intranet.html">INTRANET</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Nossos Guindastes</h1>
+    </section>
+    <!-- Guindastes -->
+    <section class="equips1">
+        <h1>Principais Equipamentos</h1>
+        <p>Tecnologia, inovação e exclusividade.</p>
+
+        <div class="equip-row1">
+            <div class="equips-col">
+                <img src="image/maq-originais/1750-Original.png">
+                <div class="layer">
+                    <h3>LG1750</h3>
+                    <a href="subpaginas/lg1750.html">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="equips-col">
+                <img src="image/maq-originais/SAC800-Original.jpg">
+                <div class="layer">
+                    <h3>SAC8000</h3>
+                    <a href="subpaginas/sac8000.html">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="equips-col">
+                <img src="image/maq-originais/1600-Original.png">
+                <div class="layer">
+                    <h3>LR1600</h3>
+                    <a href="subpaginas/lr1600.html">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="equips2">
+        <div class="equip-row2">
+            <div class="equips-col2">
+                <img src="image/maq-originais/1500-Original.png">
+                <div class="layer">
+                    <h3>LTM1500</h3>
+                    <a href="subpaginas/ltm1500.html">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="equips-col2">
+                <img src="image/maq-originais/900-Original3.jpg">
+                <div class="layer">
+                    <h3>SAC9000</h3>
+                    <a href="subpaginas/sac9000.html">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="equips-col2">
+                <img src="image/maq-originais/2250-Original.jpg">
+                <div class="layer">
+                    <h3>M2250</h3>
+                    <a href="subpaginas/m2250.html">Veja mais</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- Sessão 1 / Projetos --> 
+    <section class="projetos">
+
+        <h1>Nossos Projetos</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis ex est maxime? Soluta, officia ipsum accusantium quod doloremque a fugit ducimus dolorem dolorum quasi velit quae asperiores at eos saepe.</p>
+
+        <div class="row">
+            <div class="projeto-col">
+                <h3>Eólica</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+            </div>
+            <div class="projeto-col">
+                <h3>Civil</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+            </div>
+            <div class="projeto-col">
+                <h3>Óleo e Gás</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod assumenda rerum iste natus explicabo! </p>
+            </div>
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>Sobre Nós</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas reiciendis pariatur sed, voluptatem ab,<br> id reprehenderit delectus sunt perspiciatis dolore ipsa sapiente quibusdam quam aspernatur eius!<br> Veniam quidem et doloribus.</p>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/ivguindastes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ivguindastes" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/ivlinkeguindastes" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="dev">
+            <p>Desenvolvido por <a href="https://github.com/MrChagas" target="_blank">Renan Chagas</a></p>
+        </div>
+        
+    </section>
+
+<!-- JavaScript para esconder o menu -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>
