@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", "Poppins", sans-serif;
+}
+:root {
+    /*Cores*/
+    --white-color: #fffffd;
+    --dark-color: #1f1a16;
+    --primary-color: #d72724;
+    --secondary-color: #b92f2c;
+    --light-pink-color: #545454;
+    --medium-gray-color: #a6a6a6;
+    --almost-white-color: #f5eeee;
+
+    /*Tamanho da Fonte*/
+    --font-size-s: 0.9rem;  /*14px*/
+    --font-size-n: 1rem;    /*16px*/
+    --font-size-m: 1.12rem; /*18px*/
+    --font-size-l: 1.5rem;  /*24px*/
+    --font-size-xl: 2rem;   /*32px*/
+    --font-size-xxl: 2.3rem;/*36px*/
+
+    /*Peso da Fonte*/
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /*Border Radius*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /*Largura Máxima do Site*/
+    --site-max-width: 1300px;
+}
+
+.containerdeta {
+  max-width: 75%;
+  margin: auto;
+  min-height: 50vh;
+  margin-top: 10px; /* ou 20px */
+}
+.right {
+  align-items: center;
+  width: 50%;
+  padding: 50px;
+}
+
+.left{
+  width: 50%;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.main_image_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+.slide{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.option img {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+}
+
+h3 {
+  color: var(--dark-color);
+  margin: 10px;
+  font-size: var(--font-size-xl);
+  
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+    max-width: 90%;
+    margin: auto;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width:511px) {
+  .container {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .left, .right {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .option {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

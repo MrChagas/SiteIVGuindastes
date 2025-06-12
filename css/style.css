@@ -14,13 +14,13 @@
     --medium-gray-color: #a6a6a6;
     --almost-white-color: #f5eeee;
 
-    /*Peso da Fonte*/
-    --font-size-s: 0.9rem;
-    --font-size-n: 1rem;
-    --font-size-m: 1.12rem;
-    --font-size-l: 1.5rem;
-    --font-size-xl: 2rem;
-    --font-size-xxl: 2.3rem;
+    /*Tamanho da Fonte*/
+    --font-size-s: 0.9rem;  /*14px*/
+    --font-size-n: 1rem;    /*16px*/
+    --font-size-m: 1.12rem; /*18px*/
+    --font-size-l: 1.5rem;  /*24px*/
+    --font-size-xl: 2rem;   /*32px*/
+    --font-size-xxl: 2.3rem;/*36px*/
 
     /*Peso da Fonte*/
     --font-weight-normal: 400;
@@ -37,9 +37,10 @@
     --site-max-width: 1300px;
 }
 .header {
+    padding-top: 25px;
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/banner1.png');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url('../image/banner1.png');
     background-position: center;
     background-size: cover;
     position: relative;
@@ -87,7 +88,6 @@ nav img{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-
 }
 .text-box h1{
     font-size: var(--font-size-xxl);
@@ -124,7 +124,7 @@ nav .fa-solid{
         display: block;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         background: var(--light-pink-color);
         height: 100vh;
         width: 200px;
@@ -212,7 +212,11 @@ h3{
 }
 .equips-col img{
     width: 100%;
+    transition: 0.5s;
     display: block;
+}
+.equips-col:hover img {
+    transform: scale(1.05);
 }
 .layer{
     color: var(--white-color);
@@ -251,7 +255,6 @@ h3{
     text-align: center;
     padding-top: 5%;
 }
-
 h1{
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-medium)
@@ -262,7 +265,6 @@ p{
     font-weight: var(--font-weight-normal);
     padding: 15px;
 }
-
 .valores-row{
     margin-top: 1%;
     display: flex;
@@ -313,46 +315,120 @@ p{
 }
 /*----- footer -----*/
 .footer{
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
+    background-color: var(--dark-color);
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 40px;
 }
-.footer h4{
-    margin-bottom: 2px;
-    margin-top: 20px;
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-xxl);
+.footer-col{
+    width: 25%;
+    padding: 0 10px;
 }
-.footer p{
-    padding-bottom: 10px;
+.footer-logo {
+    width: 20%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
 }
-.icons .fa-brands{
-    color: var(--medium-gray-color);
-    margin: 0 10px;
-    font-size: 30pt;
-    cursor: pointer;
-    padding: 18px 0 50px;
+.footer-logo img {
+    height: 100px;           /* controla o tamanho geral */
+    width: auto;            /* mantém proporção natural */
+    max-width: 100%;        /* não deixa estourar contêiner */
+    object-fit: contain;    /* garante que ela se encaixe bem */
 }
-.dev{
-    height: 50px;
-    background-color: #737373;
-    padding: 10px;
+.footer-col h4{
+    font-size: var(--font-size-m);
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: var(--font-weight-bold);
+    position: relative;
 }
-.dev a{
-    color: white;
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--secondary-color);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: var(--font-size-n);
+    text-transform: capitalize;
+    color: var(--primary-color);
     text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    color: var(--almost-white-color);
+    transition: all 0.3s ease;
 }
-.dev p{
-    font-size: var(--font-size-s);
-    height: 10px;
-    display: block;
-    padding: 10px;
+.footer-col ul li a:hover{
+    color: var(--primary-color);
+    padding-left: 10px;
 }
-.dev a:hover{
-    color: rgb(190, 190, 190);
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--medium-gray-color);
+    margin-right: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--light-pink-color);
+    transition: all 0.5s ease;
+    font-size: var(--font-size-l);
+}
+.footer-col .social-links a:hover{
+    color: var(--dark-color);
+    background-color: #ffffff;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.row2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+ul{
+    list-style: none;
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+   .footer-col{
+    display: flex;
+    flex-direction: column;
+}
+  .footer-logo img {
+    height: 80%; /* mantém a logo visível no mobile */
+  }
+
+
+  .footer-section h4 {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .social-links{
+    flex-direction: column; /* em telas pequenas */
+    align-items: center;    /* centraliza os itens */
+    text-align: center;
+  }
 }
 /*------------Pagina Sobre--------------*/
-.sub-header {
+.sub-header-sobre{
+    padding-top: 25px;
     height: 60vh;
     width: 100%;
     background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/banner3.png');
@@ -361,7 +437,8 @@ p{
     text-align: center;
     color: var(--white-color);
 }
-.sub-header h1{
+.sub-header-sobre h1{
+    font-size: var(--font-size-xxl);
     margin-top: 90px;
 }
 .about-us{
@@ -394,6 +471,7 @@ p{
 }
 /*------------Pagina Guindastes--------------*/
 .sub-header-guind {
+    padding-top: 25px;
     height: 60vh;
     width: 100%;
     background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/maq-originais/banner-400.jpg');
@@ -433,11 +511,15 @@ p{
     border-radius: 10px;
     margin-bottom: 30px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
 }
 .equips-col img{
     width: 100%;
     display: block;
+    transition: 0.5s;
+}
+.equips-col:hover img {
+    transform: scale(1.05);
 }
 .equips-col2{
     flex-basis: 32%;
@@ -449,6 +531,10 @@ p{
 .equips-col2 img{
     width: 100%;
     display: block;
+    transition: 0.5s;
+}
+.equips-col2:hover img {
+    transform: scale(1.05);
 }
 .layer h3{
     font-size: var(--font-size-xl);
@@ -466,7 +552,7 @@ p{
     color: var(--white-color);
 }
 .layer:hover a{
-    top: 300px;
+    top: 400px;
     opacity: 1;
 }
 @media(max-width: 560px){
@@ -502,9 +588,9 @@ h1{
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-medium)
 }
-p{
+.politica p{
     color: var(--dark-color);
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     font-weight: var(--font-weight-normal);
     padding: 15px;
 }
@@ -526,7 +612,12 @@ p{
 .politica-col h3{
     text-align: center;
     font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-l);
     margin: 10px 0;
+}
+.politica-col p{
+    text-align: center;
+    font-size: var(--font-size-m);
 }
 .politica-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
@@ -534,5 +625,138 @@ p{
 @media(max-width: 700px){
     .politica-row{
         flex-direction: column;
+    }
+}
+/*----------ISO-----------*/
+.iso{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+}
+h1{
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-medium)
+}
+p{
+    color: var(--dark-color);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-normal);
+    padding: 15px;
+}
+.iso-row{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.iso-col{
+    flex-basis: 31%;
+    background: var(--almost-white-color);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.iso-col h3{
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    margin: 10px 0;
+}
+.iso-col:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+@media(max-width: 700px){
+    .iso-row{
+        flex-direction: column;
+    }
+}
+/*------------Página Contato--------------*/
+.sub-header-contato{
+    padding-top: 25px;
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/banner3.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: var(--white-color);
+}
+.sub-header-contato h1{
+    font-size: var(--font-size-xxl);
+    margin-top: 90px;
+}
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+.fale-conosco{
+    width: 80%;
+    margin: auto;   
+}
+.row-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px; /* espaçamento entre as colunas */
+  flex-wrap: wrap; /* boa prática para telas menores */
+}
+.contato-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contato-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+.contato-col div i{
+    font-size: var(--font-size-l);
+    color: var(--secondary-color);
+    margin: 10px;
+    margin-right: 30px;
+    
+}
+.fa-whatsapp {
+    color: green;
+}
+.contato-col div p{
+    padding: 0;
+    color: var(--light-pink-color);
+    font-size: var(--font-size-m);
+}
+.contato-col div h5{
+    font-size: var(--font-size-m);
+    margin-bottom: 5px;
+    color: var(--light-pink-color);
+    font-weight: var(--font-weight-bold);
+}
+.contato-col input, .contato-col textarea{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+@media(max-width: 944px){
+    .contato-col{
+    padding-left: 10px;
+    margin-bottom: 30px;
+    }
+    .contato-col input, .contato-col textarea{
+        width: 200%;
+    }
+    .contato-col div i{
+        font-size: var(--font-size-m);
+        margin-bottom: -10px;
+    }
+    .contato-col div h5{
+        font-size: var(--font-size-s);
     }
 }
