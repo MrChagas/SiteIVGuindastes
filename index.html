@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font.css">
 </head>
+    
 <body>
     <section class="header">
         <!-- Navegação -->
@@ -24,7 +25,7 @@
                     <li><a href="guindastes.html">GUINDASTES</a></li>
                     <li><a href="contato.html">CONTATO</a></li>
                     <li><a href="https://ivguindastes.vagas.solides.com.br/" target="_blank">VAGAS</a></li>
-                    <li><a href="intranet.html">INTRANET</a></li>
+                    <li><a href="intranet.html"></a></li>
                 </ul>
             </div>
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
@@ -99,11 +100,11 @@
         <div class="valores-row">
             <div class="valores-col">
                     <h3>Missão</h3>
-                    <p>Atuar com qualidade e inovação no segmento de movimentação e içamento de cargas, priorizando a segurança, o bem-estar dos colaboradores, parceiros e da comunidade, com respeito ao meio ambiente. </p>
+                    <p>Atuar com qualidade e inovação no segmento de movimentação e içamento de cargas, priorizando a segurança. </p>
                 </div>
                 <div class="valores-col">
                     <h3>Visão</h3>
-                    <p>Tornar-se a primeira escolha em içamento e movimentação de cargas no Brasil, com foco em segurança, eficiência e parceria duradoura. </p>
+                    <p>Tornar-se a primeira escolha em içamento e movimentação de cargas no Brasil. </p>
                 </div>
                 <div class="valores-col">
                     <h3>Valores</h3>
@@ -140,10 +141,9 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
                         <li><a href="#">PROJETOS</a></li>
-                        <li><a href="#">INTRANET</a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="intranet.html">INTRANET</a></li>
+                        <li><a href="https://canal.ouvidordigital.com.br/ivguindastes?lang=pt ">DENÚNCIAS</a></li>
                         <li><a href="#"></a></li>
                     </ul>
                 </div>
@@ -186,6 +186,22 @@
         }, 3000);
     });
 </script>
+<script>
+  function aceitarCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    document.cookie = "cookies_aceitos=true; max-age=31536000; path=/";
+  }
 
+  window.addEventListener('load', function () {
+    const aceitos = document.cookie.includes("cookies_aceitos=true");
+    if (aceitos) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  });
+</script>
+    <div id="cookie-banner">
+        <p>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+        <button onclick="aceitarCookies()">Aceitar</button>
+    </div>
 </body>
 </html>
