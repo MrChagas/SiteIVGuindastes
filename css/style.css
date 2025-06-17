@@ -318,7 +318,7 @@ p{
     background-color: var(--dark-color);
     color: #fff;
     padding-top: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .footer-col{
     width: 25%;
@@ -400,6 +400,64 @@ p{
 ul{
     list-style: none;
 }
+.dev {
+    background-color: var(--dark-color);
+    padding: 10px;
+    text-align: center;
+    position: relative; /* ou fixed se quiser fixo na parte inferior da janela */
+    bottom: -10px;
+    width: 100%;
+}
+.dev a{
+    color: white;
+    text-decoration: none;
+}
+.dev p{
+    color: white;
+    font-size: var(--font-size-s);
+}
+
+.dev a:hover{
+    color: rgb(190, 190, 190);
+}
+/*Pop-up WhatsApp*/
+.whatsapplink{
+    position: fixed;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 23px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 36px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+
+.iconew{
+    margin-top: 12px;
+    color: white;
+    width: 31px;
+}
+.popupw {
+    position: fixed;
+    bottom: 40px;
+    right: 23px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.popupw.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -460,6 +518,17 @@ ul{
 .about-col p{
     padding: 15px 0 25px;
 }
+.politica-btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+.hero-btn red-btn {
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
 .red-btn{
     border: 1px solid var(--light-pink-color);
     background: var(--light-pink-color);
@@ -467,7 +536,10 @@ ul{
     transition: 0.5s;
 }
 .red-btn:hover{
-    color: var(--white-color);
+    color: var(--white-color);  
+}
+.hero-btn:hover{
+    color: var(--white-color);  
 }
 /*------------Pagina Guindastes--------------*/
 .sub-header-guind {
@@ -713,14 +785,12 @@ p{
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-
 }
 .contato-col div i{
     font-size: var(--font-size-l);
     color: var(--secondary-color);
     margin: 10px;
-    margin-right: 30px;
-    
+    margin-right: 30px;  
 }
 .fa-whatsapp {
     color: green;
