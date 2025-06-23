@@ -62,32 +62,44 @@
     </section>
 
     <!-- Sessão 2 / Equipamentos -->
-
-    <section class="equips">
+    <div class="equips">
         <h1>Principais Equipamentos</h1>
         <p>Força e tecnologia alinhadas para o mais alto sucesso</p>
 
-        <div class="equip-row">
-            <div class="equips-col">
-                <img src="image/1750.png">
-                <div class="layer">
-                    <h3>LG1750</h3>
+        <div class="carrossel-equip">
+            <div class="equips-wrapper" id="equips-wrapper">
+                <div class="equips-col">
+                    <img src="image/1750.png">
+                    <div class="layer"><h3>LG1750</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/900.png">
+                    <div class="layer"><h3>SAC9000</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/800.png">
+                    <div class="layer"><h3>SAC8000</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/1600.png">
+                    <div class="layer"><h3>LR1600</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/1500.png">
+                    <div class="layer"><h3>LTM1500</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/1400.png">
+                    <div class="layer"><h3>LTM1400</h3></div>
+                </div>
+                <div class="equips-col">
+                    <img src="image/1300.png">
+                    <div class="layer"><h3>LR1300</h3></div>
                 </div>
             </div>
-            <div class="equips-col">
-                <img src="image/SAC800.png">
-                <div class="layer">
-                    <h3>SAC8000</h3>
-                </div>
-            </div>
-            <div class="equips-col">
-                <img src="image/1600.png">
-                <div class="layer">
-                    <h3>LR1600</h3>
-                </div>
-            </div>
+            <button class="nav-btn esquerda" onclick="scrollEquip(-1)">◀</button>
+            <button class="nav-btn direita" onclick="scrollEquip(1)">▶</button>
         </div>
-
     </section>
 
     <!-- Sessão 3 / Valores -->
@@ -179,6 +191,7 @@
         navLinks.style.right = "-200px";
     }
 </script>
+<!-- Cookies -->
 <script>
     window.addEventListener('load', function () {
         setTimeout(function () {
@@ -197,6 +210,50 @@
     if (aceitos) {
       document.getElementById('cookie-banner').style.display = 'none';
     }
+  });
+</script>
+<script>
+
+const controls = document.querySelectorAll(".nav-btn"); // botões esquerda e direita
+const items = document.querySelectorAll(".equips-col"); // slides
+let currentItem = 0;
+const maxItems = items.length;
+
+// Função que faz a rolagem e marca o item atual
+function atualizarCarrossel(isLeft) {
+  currentItem = isLeft ? currentItem - 1 : currentItem + 1;
+
+  if (currentItem >= maxItems) currentItem = 0;
+  if (currentItem < 0) currentItem = maxItems - 1;
+
+  items.forEach((item) => item.classList.remove("current-item"));
+
+  items[currentItem].scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest"
+  });
+
+  items[currentItem].classList.add("current-item");
+}
+
+// Evento de clique nos botões
+controls.forEach((control) => {
+  control.addEventListener("click", (e) => {
+    const isLeft = e.target.classList.contains("esquerda");
+    atualizarCarrossel(isLeft);
+  });
+});
+
+// Auto scroll a cada 5s
+setInterval(() => {
+  atualizarCarrossel(false);
+}, 5000);
+
+
+  // Garantir que começa no primeiro slide
+  window.addEventListener("load", () => {
+    mostrarSlide(slideAtual);
   });
 </script>
     <div id="cookie-banner">
