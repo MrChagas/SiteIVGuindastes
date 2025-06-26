@@ -226,14 +226,15 @@ function atualizarCarrossel(isLeft) {
   if (currentItem >= maxItems) currentItem = 0;
   if (currentItem < 0) currentItem = maxItems - 1;
 
-  items.forEach((item) => item.classList.remove("current-item"));
+  const wrapper = document.getElementById("equips-wrapper");
+  const slideWidth = items[0].offsetWidth + 20; // ajuste de margem entre slides
 
-  items[currentItem].scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-    block: "nearest"
+  wrapper.scrollTo({
+    left: slideWidth * currentItem,
+    behavior: "smooth"
   });
 
+  items.forEach((item) => item.classList.remove("current-item"));
   items[currentItem].classList.add("current-item");
 }
 
