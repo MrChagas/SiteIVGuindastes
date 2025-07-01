@@ -30,12 +30,12 @@
             </div>
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
-    <!-- Texto central -->
-    <div class="text-box">
-        <h1>I.V. Guindastes</h1>
-        <p>Elevando seus projetos desde 1983</p>
-        <a href="contato.html" class="hero-btn">Fale Conosco e Saiba Mais</a>
-    </div>
+        <!-- Texto central -->
+        <div class="text-box">
+            <h1>I.V. Guindastes</h1>
+            <p>Elevando seus projetos desde 1983</p>
+            <a href="contato.html" class="hero-btn">Fale Conosco e Saiba Mais</a>
+        </div>
     </section>
 
    <!-- Sessão 1 / Projetos --> 
@@ -62,63 +62,65 @@
     </section>
 
     <!-- Sessão 2 / Equipamentos -->
-    <div class="equips">
-        <h1>Principais Equipamentos</h1>
-        <p>Força e tecnologia alinhadas para o mais alto sucesso</p>
+    <section>
+        <div class="equips">
+            <h1>Principais Equipamentos</h1>
+            <p>Força e tecnologia alinhadas para o mais alto sucesso</p>
 
-        <div class="carrossel-equip">
-            <div class="equips-wrapper" id="equips-wrapper">
-                <div class="equips-col">
-                    <img src="image/1750.png">
-                    <div class="layer"><h3>LG1750</h3></div>
+            <div class="carrossel-equip">
+                <div class="equips-wrapper" id="equips-wrapper">
+                    <div class="equips-col">
+                        <img src="image/1750.png">
+                        <div class="layer"><h3>LG1750</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/900.png">
+                        <div class="layer"><h3>SAC9000</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/800.png">
+                        <div class="layer"><h3>SAC8000</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/1600.png">
+                        <div class="layer"><h3>LR1600</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/1500.png">
+                        <div class="layer"><h3>LTM1500</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/1400.png">
+                        <div class="layer"><h3>LTM1400</h3></div>
+                    </div>
+                    <div class="equips-col">
+                        <img src="image/1300.png">
+                        <div class="layer"><h3>LR1300</h3></div>
+                    </div>
                 </div>
-                <div class="equips-col">
-                    <img src="image/900.png">
-                    <div class="layer"><h3>SAC9000</h3></div>
-                </div>
-                <div class="equips-col">
-                    <img src="image/800.png">
-                    <div class="layer"><h3>SAC8000</h3></div>
-                </div>
-                <div class="equips-col">
-                    <img src="image/1600.png">
-                    <div class="layer"><h3>LR1600</h3></div>
-                </div>
-                <div class="equips-col">
-                    <img src="image/1500.png">
-                    <div class="layer"><h3>LTM1500</h3></div>
-                </div>
-                <div class="equips-col">
-                    <img src="image/1400.png">
-                    <div class="layer"><h3>LTM1400</h3></div>
-                </div>
-                <div class="equips-col">
-                    <img src="image/1300.png">
-                    <div class="layer"><h3>LR1300</h3></div>
-                </div>
+                <button class="nav-btn esquerda" onclick="scrollEquip(-1)">◀</button>
+                <button class="nav-btn direita" onclick="scrollEquip(1)">▶</button>
             </div>
-            <button class="nav-btn esquerda" onclick="scrollEquip(-1)">◀</button>
-            <button class="nav-btn direita" onclick="scrollEquip(1)">▶</button>
-        </div>
+        </div>    
     </section>
 
     <!-- Sessão 3 / Valores -->
-    <section class="valores">
+    <section class="valores1">
 
         <h1>Nossa Ideologia Organizacional</h1>
         <p><br></p>
         
 
-        <div class="valores-row">
-            <div class="valores-col">
+        <div class="valores-row1">
+            <div class="valores-col1">
                     <h3>Missão</h3>
                     <p>Atuar com qualidade e inovação no segmento de movimentação e içamento de cargas, priorizando a segurança. </p>
                 </div>
-                <div class="valores-col">
+                <div class="valores-col1">
                     <h3>Visão</h3>
                     <p>Tornar-se a primeira escolha em içamento e movimentação de cargas no Brasil. </p>
                 </div>
-                <div class="valores-col">
+                <div class="valores-col1">
                     <h3>Valores</h3>
                     <p> Segurança<br>
                         Responsabilidade<br>
@@ -212,8 +214,8 @@
     }
   });
 </script>
-<script>
 
+<script>
 const controls = document.querySelectorAll(".nav-btn"); // botões esquerda e direita
 const items = document.querySelectorAll(".equips-col"); // slides
 let currentItem = 0;
