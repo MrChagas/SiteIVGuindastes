@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", "Poppins", sans-serif;
+    background-color: #fefefe;
+    background: transparent;
+    
 }
 :root {
     /*Cores*/
@@ -50,23 +53,28 @@ nav{
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
 }
 nav img{
     width: 150px;
+    background: transparent;
 }
 .nav-links{
     flex: 1;
     text-align: right;
+    background: transparent;
 }
 .nav-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
+    background: transparent;
 }
 .nav-links ul li a{
     color: white;
     text-decoration: none;
+    background: transparent;
 }
 .nav-links ul li::after {
     content: '';
@@ -88,14 +96,17 @@ nav img{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    background: transparent;
 }
 .text-box h1{
     font-size: var(--font-size-xxl);
+    background: transparent;
 }
 .text-box p {
     margin: 10px 0 40px;
     font-size: var(--font-size-l);
     color: var(--white-color);
+    background: transparent;
 }
 .hero-btn{
     display: inline-block;
@@ -153,6 +164,7 @@ nav .fa-solid{
   padding-top: 5%;
 }
 h1{
+    background-color: #fefefe;
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-medium)
 }
@@ -178,14 +190,17 @@ p{
     box-sizing: border-box;
     transition: 0.5s;
 }
+.projeto-col p{
+    background-color: var(--almost-white-color);
+}
 h3{
     text-align: center;
     font-weight: var(--font-weight-medium);
     margin: 10px 0;
+    background-color: var(--almost-white-color);
 }
 .projeto-col:hover{
-    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
-    
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);  
 }
 @media (max-width: 768px) {
   .projeto-col {
@@ -347,8 +362,10 @@ p{
     margin-bottom: 5%;
     padding: 10px 12px;
     box-sizing: border-box;
-    transition: 0.5s;
-    
+    transition: 0.5s;    
+}
+.valores-col1 p{
+    background-color: var(--almost-white-color);
 }
 .valores-col h3 {
     text-align: justify;
@@ -384,6 +401,7 @@ p{
     color: var(--white-color);
     margin-bottom: 40px;
     padding: 0;
+    background: transparent;
 }
 @media(max-width: 700px){
     .cta h1{
@@ -400,18 +418,21 @@ p{
 .footer-col{
     width: 25%;
     padding: 0 10px;
+
 }
 .footer-logo {
     width: 20%;
     padding: 0 15px;
     display: flex;
     align-items: center;
+
 }
 .footer-logo img {
     height: 100px;           /* controla o tamanho geral */
     width: auto;            /* mantém proporção natural */
     max-width: 100%;        /* não deixa estourar contêiner */
     object-fit: contain;    /* garante que ela se encaixe bem */
+
 }
 .footer-col h4{
     font-size: var(--font-size-m);
@@ -419,7 +440,7 @@ p{
     text-transform: capitalize;
     margin-bottom: 30px;
     font-weight: var(--font-weight-bold);
-    position: relative;
+    position: relative;   
 }
 .footer-col h4::before{
     content: '';
@@ -430,9 +451,11 @@ p{
     height: 2px;
     box-sizing: border-box;
     width: 50px;
+   
 }
 .footer-col ul li:not(:last-child){
     margin-bottom: 10px;
+    
 }
 .footer-col ul li a{
     font-size: var(--font-size-n);
@@ -467,6 +490,7 @@ p{
 .container{
     max-width: 1170px;
     margin: auto;
+
 }
 .row2{
     margin-top: 20px;
@@ -513,11 +537,13 @@ ul{
     font-size: 36px;
     box-shadow: 1px 1px 2px #888;
     z-index: 1000;
+    
 }
 .iconew{
     margin-top: 12px;
     color: white;
     width: 31px;
+    background: transparent;
 }
 .popupw {
     position: fixed;
@@ -547,8 +573,6 @@ ul{
   .footer-logo img {
     height: 80%; /* mantém a logo visível no mobile */
   }
-
-
   .footer-section h4 {
     margin-top: 10px;
   }
@@ -574,6 +598,7 @@ ul{
 .sub-header-sobre h1{
     font-size: var(--font-size-xxl);
     margin-top: 90px;
+    background: transparent;
 }
 .about-us{
     width: 80%;
@@ -632,6 +657,7 @@ ul{
 .sub-header-guind h1{
     font-size: var(--font-size-xxl);
     margin-top: 90px;
+    background: transparent;
 }
 .equips1{
     width: 80%;
@@ -687,6 +713,7 @@ ul{
 }
 .layer h3{
     font-size: var(--font-size-xl);
+    background: transparent;
 }
 .layer a {
     font-size: var(--font-size-l);
@@ -834,6 +861,7 @@ p{
 .sub-header-contato h1{
     font-size: var(--font-size-xxl);
     margin-top: 90px;
+    background: transparent;
 }
 .location {
     width: 80%;
@@ -862,6 +890,7 @@ p{
     font-size: var(--font-size-l);
     color: #444;
     margin: 0;
+    background: transparent;
 }
 .fale-conosco{
     width: 80%;

@@ -1,4 +1,7 @@
-
+*{
+    background-color: #fefefe;
+    background: transparent;
+}
 /*----- equipamentos -----*/
 .intra2{
     width: 80%;
@@ -51,6 +54,7 @@
     position: absolute;
     opacity: 0;
     transition: 1s;
+    background: transparent;
 }
 .layer2:hover h3{
     bottom: 49%;

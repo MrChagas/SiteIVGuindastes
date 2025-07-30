@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", "Poppins", sans-serif;
+    background-color: #fefefe;
+    background: transparent;
 }
 :root {
     /*Cores*/
@@ -93,7 +95,7 @@ h3 {
   color: var(--dark-color);
   margin: 10px;
   font-size: var(--font-size-xl);
-  
+  background-color: #fefefe;
 }
 
 @media only screen and (max-width:768px) {
