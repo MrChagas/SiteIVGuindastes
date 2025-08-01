@@ -839,6 +839,12 @@ p{
     font-weight: var(--font-weight-medium);
     margin: 10px 0;
 }
+.logoISO {
+  margin: 0 auto;
+  max-width: 35%;
+  height: auto;
+  display: block;
+}
 .iso-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
