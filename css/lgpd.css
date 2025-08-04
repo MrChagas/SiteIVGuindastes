@@ -1,0 +1,26 @@
+
+.politica-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-left: 6px solid #d60000; /* vermelho IV */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.politica-container h1 {
+  color: #d60000;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.politica-container h2 {
+  color: #a70000;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.politica-container p {
+  line-height: 1.6;
+  margin-top: 10px;
+}

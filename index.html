@@ -155,7 +155,7 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="#">PROJETOS</a></li>
+                        <li><a href="lgpd.html">PRIVACIDADE</a></li>
                         <li><a href="intranet.html">INTRANET</a></li>
                         <li><a href="https://canal.ouvidordigital.com.br/ivguindastes?lang=pt ">DENÚNCIAS</a></li>
                         <li><a href="#"></a></li>
@@ -195,21 +195,21 @@
 </script>
 <!-- Cookies -->
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            document.querySelector('.popupw').classList.add('show');
-        }, 3000);
-    });
-</script>
-<script>
   function aceitarCookies() {
     document.getElementById('cookie-banner').style.display = 'none';
     document.cookie = "cookies_aceitos=true; max-age=31536000; path=/";
   }
 
+  function recusarCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    document.cookie = "cookies_aceitos=false; max-age=31536000; path=/";
+  }
+
   window.addEventListener('load', function () {
-    const aceitos = document.cookie.includes("cookies_aceitos=true");
-    if (aceitos) {
+    const cookies = document.cookie;
+    if (!cookies.includes("cookies_aceitos")) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    } else {
       document.getElementById('cookie-banner').style.display = 'none';
     }
   });
@@ -260,8 +260,11 @@ setInterval(() => {
   });
 </script>
     <div id="cookie-banner">
-        <p>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
-        <button onclick="aceitarCookies()">Aceitar</button>
+        <p>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="lgpd.html" target="_blank">Política de Privacidade</a>.</p>
+        <div class="cookie-buttons">
+            <button onclick="aceitarCookies()">Aceitar</button>
+            <button onclick="recusarCookies()">Recusar</button>
+        </div>
     </div>
 </body>
 </html>

@@ -975,6 +975,16 @@ p{
   display: block;
   margin: 0 auto; /* centraliza, se desejar */
 }
+/*------------Cookies--------------*/
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  align-self: flex-end;
+}
 
 #cookie-banner {
     position: fixed;
