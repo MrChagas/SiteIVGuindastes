@@ -127,7 +127,7 @@ nav img{
 nav .fa-solid{
     display: none;
 }
-@media (max-width: 700px){
+@media (max-width: 741px){
     .text-box h1{
         font-size: 20px;
     }
@@ -643,6 +643,29 @@ ul{
 .hero-btn:hover{
     color: var(--white-color);  
 }
+@media (max-width: 1014px) {
+    .politica-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-col {
+        flex-basis: 100%;
+        max-width: 90%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .about-col img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .about-col h1, .about-col p {
+        text-align: center;
+    }
+}
 /*------------Pagina Guindastes--------------*/
 .sub-header-guind {
     padding-top: 25px;
@@ -798,7 +821,7 @@ h1{
 .politica-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
-@media(max-width: 700px){
+@media(max-width: 1010px){
     .politica-row{
         flex-direction: column;
     }
@@ -848,7 +871,7 @@ p{
 .iso-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
-@media(max-width: 700px){
+@media(max-width: 910px){
     .iso-row{
         flex-direction: column;
     }
