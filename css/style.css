@@ -129,7 +129,7 @@ nav .fa-solid{
 }
 @media (max-width: 741px){
     .text-box h1{
-        font-size: 20px;
+        font-size: 35px;
     }
     .nav-links ul li{
         display: block;
@@ -256,7 +256,7 @@ h3{
     color: var(--dark-color);
 }
 /* Título do equipamento dentro da camada */
-.layer h3{
+.layer h2{
     width: 100%;
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
@@ -268,7 +268,7 @@ h3{
     transition: 1s;
 }
 /* Título visível no hover */
-.layer:hover h3{
+.layer:hover h2{
     bottom: 49%;
     opacity: 1;
 }
