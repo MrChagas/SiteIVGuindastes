@@ -43,7 +43,7 @@
     padding-top: 25px;
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url('../image/banner1.png');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url('../image/guindaste-banner1.webp');
     background-position: center;
     background-size: cover;
     position: relative;
@@ -260,6 +260,7 @@ h2{
     width: 100%;
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
+    background: none;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -389,7 +390,7 @@ p{
 .cta{
     margin: 80px auto;
     width: 80%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url('../image/background.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url('../image/guindaste-background.webp');
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -593,7 +594,7 @@ ul{
     padding-top: 25px;
     height: 60vh;
     width: 100%;
-    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/banner3.png');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/guindaste-banner3.webp');
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -675,7 +676,7 @@ ul{
     padding-top: 25px;
     height: 60vh;
     width: 100%;
-    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/maq-originais/banner-400.jpg');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/maq-originais/banner-400.webp');
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -889,7 +890,7 @@ p{
     padding-top: 25px;
     height: 60vh;
     width: 100%;
-    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/banner3.png');
+    background-image: linear-gradient(rgba(44, 44, 44, 0.7)), url('../image/guindaste-banner3.webp');
     background-position: center;
     background-size: cover;
     text-align: center;
