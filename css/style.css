@@ -256,7 +256,7 @@ h2{
     color: var(--dark-color);
 }
 /* Título do equipamento dentro da camada */
-.layer h2{
+.layer h3{
     width: 100%;
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
@@ -269,7 +269,7 @@ h2{
     transition: 1s;
 }
 /* Título visível no hover */
-.layer:hover h2{
+.layer:hover h3{
     bottom: 49%;
     opacity: 1;
 }
