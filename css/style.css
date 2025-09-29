@@ -256,7 +256,7 @@ h2{
     color: var(--dark-color);
 }
 /* Título do equipamento dentro da camada */
-.layer h3{
+.layer h2{
     width: 100%;
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
@@ -269,7 +269,7 @@ h2{
     transition: 1s;
 }
 /* Título visível no hover */
-.layer:hover h3{
+.layer:hover h2{
     bottom: 49%;
     opacity: 1;
 }
@@ -418,7 +418,7 @@ p{
 .footer{
     background-color: var(--dark-color);
     color: #fff;
-    padding-top: 10px;
+    padding-top: 50px;
     padding-bottom: 10px;
 }
 .footer-col{
@@ -739,7 +739,7 @@ ul{
 .equips-col2:hover img {
     transform: scale(1.05);
 }
-.layer h3{
+.layer h2{
     font-size: var(--font-size-xl);
     background: transparent;
 }
@@ -760,7 +760,7 @@ ul{
     opacity: 1;
 }
 @media(max-width: 560px){
-    .layer h3{
+    .layer h2{
         font-size: var(--font-size-m);
     }
     .layer a{
@@ -1006,6 +1006,74 @@ p{
   object-fit: contain;
   display: block;
   margin: 0 auto; /* centraliza, se desejar */
+}
+/*------------Página TRANSPARÊNCIA--------------*/
+
+/* container com os menus lado a lado */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px; /* espaço acima e abaixo */
+  margin-bottom: 150px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Cada menu */
+.menu-item {
+  position: relative;
+}
+
+/* Botões principais */
+.menu-button {
+  background-color: #c62828; /* vermelho padrão I.V. */
+  color: #fff;
+  padding: 14px 62px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-button:hover {
+  background-color: #8e0000; /* vermelho escuro */
+}
+
+/* Submenus (ficam escondidos até abrir) */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* aparece logo abaixo do botão */
+  left: 0;
+  background-color: #fff;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.submenu a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.submenu a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Quando o menu está aberto */
+.menu-item.open .menu-button span {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
 }
 /*------------Cookies--------------*/
 .cookie-buttons {

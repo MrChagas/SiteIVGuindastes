@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet - I.V. Guindastes</title>
+    <title>Portal da Transparência - I.V. Guindastes</title>
     <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="css/style.css">
@@ -28,48 +28,64 @@
             </div>
             <i class="fa-solid fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1>Intranet</h1>
+        <h1>Portal da Transparência</h1>
     </section>
         
-        <!-- Guindastes -->
+        <!-- Portal Interno -->
     <section class="equips2">
-        <h1>Portais Internos</h1>
-        <p>Portais para acesso exclusivo de colaborardores I.V. Guindastes.
-
+        <h1>Relatórios Anuais</h1>
+        <p>Acesse relatórios especiais da I.V. Guindastes.
     </section>
+
+    <div class="menu-container">
+    <!-- Ano 2024 -->
+    <div class="menu">
+      <div class="menu-item">
+        <button class="menu-button" onclick="toggleMenu(this, 'submenu2024')">
+          2024 <span>▼</span>
+        </button>
+        <div id="submenu2024" class="submenu">
+          <a href="doc/2024-Relatório PDF - RelatorioIgualdadeSalarialLote_2024_2_52928736000128-1.pdf" target="_blank">Igualdade Salarial</a>
+          <a href="#2024-opcao2">Relatório 2</a>
+          <a href="#2024-opcao3">Relatório 3</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ano 2025 -->
+    <div class="menu">
+      <div class="menu-item">
+        <button class="menu-button" onclick="toggleMenu(this, 'submenu2025')">
+          2025 <span>▼</span>
+        </button>
+        <div id="submenu2025" class="submenu">
+          <a href="doc/2025-Relatório - RelatorioIgualdadeSalarialLote_2025_2_52928736000128-1.pdf" target="_blank">Igualdade Salarial</a>
+          <a href="#2025-opcao2">Relatório 2</a>
+          <a href="#2025-opcao3">Relatório 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
     <section class="intra2">
         <div class="intra-row2">
             <div class="intra-col2">
-                <img src="image/intranet/SolidesLogo.png">
+                <img src="image/intranet/Plataforma de Treinamento Interno.png">
                 <div class="layer2">
-                    <h3>Acesse a Sólides</h3>
-                    <a class="a2" href="https://plataforma.solides.com/?_gl=1*3ao0eg*_gcl_au*MTcwMjU4NDkwMC4xNzUxNDAwNDky*_ga*MjA2MjEwNDQxNC4xNzUxNDAwNDk1*_ga_3H9X4FC85J*czE3NTE0MDA0OTUkbzEkZzAkdDE3NTE0MDA1MzckajE4JGwwJGgw*_ga_045W6GE8B6*czE3NTE0MDA0OTYkbzEkZzAkdDE3NTE0MDA0OTYkajYwJGwwJGgw" target="_blank">Acesso ao Portal RH</a>
-                    <a href="https://app.tangerino.com.br/Tangerino/pages/LoginPage;jsessionid=7a10655b70c140597f3bb58c98d4" target="_blank">Acesso ao Portal DP</a>
-                </div>
-            </div>
-            <div class="intra-col2">
-                <img src="image/intranet/DooLogo.png">
-                <div class="layer2">
-                    <h3>Acesse o Doo</h3>
-                    <a href="https://app.doo.com.br/useall/login" target="_blank">Acessar</a>
-                </div>
-            </div>
-            <div class="intra-col2">
-                <img src="image/intranet/GoEvoLogo.png">
-                <div class="layer2">
-                    <h3>Acesse o GoEvo</h3>
-                    <a href="https://ivguindastes.e-tetris.com/ESB/TetrisACCESS/Login.aspx" target="_blank">Acessar</a>
+                    <h3>Relatórios 2024</h3>
+                    <a href="#" target="_blank">Acessar</a>
                 </div>
             </div>
             <div class="intra-col2">
                 <img src="image/intranet/Plataforma de Treinamento Interno.png">
                 <div class="layer2">
-                    <h3>Acesse a Central de Treinamentos</h3>
+                    <h3>Relatórios 2025</h3>
                     <a href="#" target="_blank">Acessar</a>
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <footer class="footer">
             <div class="container">
@@ -117,6 +133,22 @@
             </div>
 
 <!-- JavaScript para esconder o menu -->
+ <script>
+    function toggleMenu(button, id) {
+      const submenu = document.getElementById(id);
+      const isVisible = submenu.style.display === "block";
+
+      // fecha todos antes
+      document.querySelectorAll(".submenu").forEach(el => el.style.display = "none");
+      document.querySelectorAll(".menu-item").forEach(el => el.classList.remove("open"));
+
+      // abre só o clicado
+      if (!isVisible) {
+        submenu.style.display = "block";
+        button.parentElement.classList.add("open");
+      }
+    }
+  </script>
 <script>
     var navLinks = document.getElementById("navLinks");
 
