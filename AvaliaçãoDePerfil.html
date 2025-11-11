@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação de Perfil - I.V. Guindastes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #fffffd;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #b40000;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #000000;
+      font-size: 12pt
+    }
+    h3{
+      color: #1f1a16;
+      font-size: 11pt;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .container-d {
+      background: #e9e9e9;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 40px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 40px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+    .container-p {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 40px;
+      padding-bottom: 10px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      appearance: none;
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #999 50%, #999 50%);
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #b40000;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .result {
+      margin-top: 10px;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    button {
+      background-color: #b40000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #8d0000;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container-d">
+    <div class="descricao">
+        <h1> Descrição do Cargo</h1>
+        <h2 class="vaga">Aqui você vai adicionar a descrição da vaga.</h2> 
+    <h1>Avaliação de Perfil</h1>
+    <h2>Arraste as barras para o perfil que mais se aproxima do avaliado:</h2>
+  </div>
+     
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>1 - Você entende que esse cargo precisa ter um perfil mais <b>realista</b> ou mais <b>otimista</b>?<br><br>
+          <b>Realista:</b> se atenta a enxergar as situações como ela são, com base nos fatos e dados concretos.<br><br>
+          <b>Otimista:</b> tem a tendência de enxergar o lado positivo das coisas, acreditando que tudo vai acabar bem.</h3><br><br>
+        <div class="labels">
+          <span>Realista</span>
+          <span>Otimista</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>2 - Você entende que esse cargo precisa ter um perfil que tenha mais <b>habilidade em análise</b> ou mais <b>habilidade em comunicação</b>?<br><br>
+          <b>Habilidade em Análise:</b> tem facilidade para examinar detalhes e entender a lógica por trás de situações e processos.<br><br>
+          <b>Habilidade em Comunicação:</b> tem facilidade para se expressar, criar conexões e se relacionar bem com os outros.</h3><br><br>
+        <div class="labels">
+          <span>Habilidade em Análise</span>
+          <span>Habilidade em Comunicação</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>3 - Você entende que esse cargo precisa ter um perfil que tenha mais <b>habilidade introspectiva</b> ou mais <b>habilidade social</b>?<br><br>
+          <b>Habilidade Introspectiva:</b> costuma refletir bastante sobre si mesma e presta atenção nas próprias ações.<br><br>
+          <b>Habilidade Social:</b> consegue se enturmar com facilidade, mesmo em lugares novos ou com pessoas desconhecidas.</h3><br><br>
+        <div class="labels">
+          <span>Habilidade Introspectiva</span>
+          <span>Habilidade Social</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>4 - Você entende que esse cargo precisa ter um perfil mais <b>sensível</b> ou mais <b>motivador</b>?<br><br>
+          <b>Sensível:</b> tem facilidade em sentir a realidade ao seu redor.<br><br>
+          <b>Motivador:</b> tem facilidade em motivar os demais a sua volta.</h3><br><br>
+        <div class="labels">
+          <span>Sensível</span>
+          <span>Motivador</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>5 - Você entende que esse cargo precisa ter um perfil mais <b>reservado</b> ou mais <b>comunicador e divulgador</b>?<br><br>
+          <b>Reservado:</b> que é discreto, quieto e que prefere guardar para si suas ideias e sentimentos.<br><br>
+          <b>Comunicador e divulgador:</b> que sabe expressar bem suas ideias e repassar informações com clareza.</h3><br><br>
+        <div class="labels">
+          <span>Reservado</span>
+          <span>Comunicador e divulgador</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>6 - Você entende que esse cargo precisa ter um perfil mais <b>atento a detalhes</b> ou mais <b>generalista</b>?<br><br>
+          <b>Atento a detalhes:</b> tem talento para enxergar situações de forma detalhada e atenciosa.<br><br>
+          <b>Generalista:</b> tem conhecimentos, habilidades e interesse em diversas áreas.</h3><br><br>
+        <div class="labels">
+          <span>Atento a detalhes</span>
+          <span>Generalista</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>7 - Você entende que esse cargo precisa ter um perfil que <b>busca exatidão em seu trabalho</b> ou que é <b>entusiasta</b>?<br><br>
+          <b>Busca exatidão em seu trabalho:</b> valoriza a qualidade, se preocupa com os detalhes e prefere evitar riscos.<br><br>
+          <b>Entusiasta:</b> se expressa com entusiasmo e boas energias, contagiando os demais.</h3><br><br>
+        <div class="labels">
+          <span>Busca exatidão em seu trabalho</span>
+          <span>Entusiasta</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>8 - Você entende que esse cargo precisa ter um perfil que <b>busca decisões mais seguras</b> ou que <b>busca decisões mais rápidas</b>?<br><br>
+          <b>Busca decisões mais seguras:</b> sempre antes de tomar uma decisão, considera todos os riscos possíveis.<br><br>
+          <b>Busca decisões mais rápidas:</b> tende a tomar decisões de forma mais imediata e intuitiva.</h3><br><br>
+        <div class="labels">
+          <span>Decisões mais seguras</span>
+          <span>Decisões mais rápidas</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>9 - Você entende que esse cargo precisa ter um perfil mais <b>condescendente </b> ou <b>dominante</b>?<br><br>
+          <b>Condescendente:</b> que se dispõe mais a ouvir as ideias e opiniões das outras do que as suas próprias.<br><br>
+          <b>Dominante:</b> que não omite suas opiniões e posicionamentos, expondo seu ponto de vista em todas as situações.</h3><br><br>
+        <div class="labels">
+          <span>Condescendente</span>
+          <span>Dominante</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>10 - Você entende que esse cargo precisa ter um perfil de quem <b>tem o trabalhar estruturado</b> ou que <b>executa várias coisas ao mesmo tempo</b>?<br><br>
+          <b>Tem o trabalhar estruturado:</b> gosta de organizar, planejar e seguir etapas definidas para garantir que tudo saia conforme o esperado.<br><br>
+          <b>Executa várias coisas ao mesmo tempo:</b> se envolve em várias funções ao mesmo tempo e não precisa focar na estruturação de um processo para isso.</h3><br><br>
+        <div class="labels">
+          <span>Tem o trabalhar<br>estruturado</span>
+          <span>Varias coisas <br>ao mesmo tempo</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>11 - Você entende que esse cargo precisa ter um perfil de quem <b>gosta de trabalhar com o conhecido</b> ou que <b>gosta de novos empreendimentos</b>?<br><br>
+          <b>Gosta de trabalhar com o conhecido:</b> se sente melhor em trabalhar com o que já tem conhecimento e experiência.<br><br>
+          <b>Gosta de novos empreendimentos:</b> tem gosto pela inovação e pela diferença, preferindo trabalhar em cenários que tragam desafios.</h3><br><br>
+        <div class="labels">
+          <span>Gosta de trabalhar com o conhecido</span>
+          <span>Gosta de novos empreendimentos</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>11 - Você entende que esse cargo precisa ter um perfil de quem <b>se preocupa com a regularidade</b> ou que <b>se preocupa com a praticidade</b>?<br><br>
+          <b>Se preocupa com a regularidade:</b> valoriza o planejamento e a qualidade da execução, mais do que valoriza a velocidade.<br><br>
+          <b>Se preocupa com a praticidade:</b> valoriza mais o resultado final do que os processos para alcançá-lo.</h3><br><br>
+        <div class="labels">
+          <span>Se preocupa com a<br> regularidade</span>
+          <span>Se preocupa com a<br> praticidade</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>12 - Você entende que esse cargo precisa ter um perfil de quem <b>tem estilo consultivo</b> ou que <b>tem o estilo agressivo</b>?<br><br>
+          <b>Estilo consultivo:</b> tende a consultar outras pessoas antes de se posicionar, de opinar ou de tomar decisões.<br><br>
+          <b>Estilo agressivo:</b> é mais dominante, se posicionando com firmeza e senso crítico.</h3><br><br>
+        <div class="labels">
+          <span>Estilo consultivo</span>
+          <span>Estilo agressivo</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>13 - Você entende que esse cargo precisa ter um perfil mais <b>calmo</b> ou <b>agitado</b>?<br><br>
+          <b>Calmo:</b> equilibrado em suas ações, dificilmente demonstrando descontrole emocional.<br><br>
+          <b>Agitado:</b> perfil inquieto, que reage de forma mais impulsiva às situações à sua volta.</h3><br><br>
+        <div class="labels">
+          <span>Calmo</span>
+          <span>Agitado</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>14 - Você entende que esse cargo precisa ter um perfil que <b>gosta de rotina</b> ou que <b>não gosta de rotina</b>?<br><br>
+          <b>Gosta de rotina:</b> prefere seguir padrões, buscando sempre processos bem definidos.<br><br>
+          <b>Não gosta de rotina:</b> não gosta de seguir padrões nem rotinas, buscando formas diferentes de executar suas tarefas do dia-a-dia.</h3><br><br>
+        <div class="labels">
+          <span>Gosta de rotina</span>
+          <span>Não gosta de rotina</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>15 - Você entende que esse cargo precisa ter um perfil mais <b>cauteloso </b> ou mais <b>destemido</b>?<br><br>
+          <b>Cauteloso:</b> que analisa todas as possibilidades antes de tomar qualquer decisão, com o intuito de evitar riscos.<br><br>
+          <b>Destemido:</b> que gosta de assumir riscos e de se expor de forma a desafios.</h3><br><br>
+        <div class="labels">
+          <span>Cauteloso</span>
+          <span>Destemido</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>16 - Você entende que esse cargo precisa ter um perfil que <b>gosta de ambientes calmos</b> ou que <b>gosta de ambientes agitados</b>?<br><br>
+          <b>Gosta de ambientes calmos:</b> prefere estar em lugares mais tranquilos, estáveis, sem muita agitação.<br><br>
+          <b>Gosta de ambientes agitados:</b> prefere estar em lugares agitados, que tenha interações com outras pessoas, criando assim mais conexões.</h3><br><br>
+        <div class="labels">
+          <span>Ambientes calmos</span>
+          <span>Ambientes agitados</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>17 - Você entende que esse cargo precisa ter um perfil mais <b>concentrado </b> ou que <b>dinâmico</b>?<br><br>
+          <b>Concentrado:</b> é muito aplicado e atento a uma determinada tarefa e não se desconcentra com facilidade.<br><br>
+          <b>Dinâmico:</b> que é ágil, flexível e normalmente comunicativo.</h3><br><br>
+        <div class="labels">
+          <span>Concentrado</span>
+          <span>Dinâmico</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>18 - Você entende que esse cargo precisa ter um perfil que <b>prefere ser orientado</b> ou que <b>gosta de tomar a frente</b>?<br><br>
+          <b>Prefere ser orientado:</b> prefere receber orientações ao invés de decidir por conta própria.<br><br>
+          <b>Gosta de tomar a frente:</b> gosta de assumir responsabilidades e conduzir projetos e processos.</h3><br><br>
+        <div class="labels">
+          <span>Prefere ser orientado</span>
+          <span>Gosta de tomar a frente</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>19 - Você entende que esse cargo precisa ter um perfil que <b>evita riscos</b> ou que <b>assume riscos</b>?<br><br>
+          <b>Evita riscos:</b> tende a se afastar de situações arriscadas, já que não se sente confortável com elas.<br><br>
+          <b>Assume riscos:</b> age com segurança e responsabilidade ao enfrentar situações que envolvem risco.</h3><br><br>
+        <div class="labels">
+          <span>Evita riscos</span>
+          <span>Assume riscos</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>20 - Você entende que esse cargo precisa ter um perfil mais <b>introvertido</b> ou <b>extrovertido</b>?<br><br>
+          <b>Introvertido:</b> sempre antes de tomar uma decisão, considera todos os riscos possíveis.<br><br>
+          <b>Extrovertido:</b> tende a tomar decisões de forma mais imediata e intuitiva.</h3><br><br>
+        <div class="labels">
+          <span>Introvertido</span>
+          <span>Extrovertido</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>21 - Você entende que esse cargo precisa ter um perfil que <b>é mais crítico</b> ou <b>amigável</b>?<br><br>
+          <b>É mais crítico:</b> costuma ser exigente e não pensa duas vezes para expressar seu ponto de vista.<br><br>
+          <b>Amigável:</b> mantém um relacionamento tranquilo com os outros, sendo aberto a ouvir e sem fazer julgamentos.</h3><br><br>
+        <div class="labels">
+          <span>É mais crítico</span>
+          <span>Amigável</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+    <div class="container-p">
+      <div class="pergunta">
+        <h3>22 - Você entende que esse cargo precisa ter um perfil que <b>se desenvolve via trabalho</b> ou <b>se desenvolve via relacionamentos</b>?<br><br>
+          <b>Desenvolve via Trabalho:</b> prefere crescer e aprender por meio das tarefas que executa no seu dia a dia.<br><br>
+          <b>Desenvolve via Relacionamentos:</b> evolui e aprende principalmente ao construir conexões e novos relacionamentos.</h3><br><br>
+        <div class="labels">
+          <span>Desenvolve via Trabalho</span>
+          <span>Desenvolve via Relacionamentos</span>          
+        </div>
+        <input type="range" id="slider1" min="-100" max="100" value="0">
+        <div class="result" id="resultado1">|</div>
+      </div>
+    </div>  
+
+      <button id="gerarPDF">Gerar Resultado</button>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+<script>
+  const sliders = document.querySelectorAll('input[type="range"]');
+  const resultados = document.querySelectorAll('.result');
+
+  sliders.forEach((slider, i) => {
+    slider.addEventListener('input', () => atualizarResultado(slider, resultados[i]));
+    atualizarResultado(slider, resultados[i]);
+  });
+
+  function atualizarResultado(slider, resultado) {
+    const valor = parseInt(slider.value);
+    const valorAbs = Math.abs(valor);
+    const porcentagem = ((valor + 100) / 200) * 100;
+    slider.style.background = `linear-gradient(to right, #ccc ${porcentagem}%, #ccc ${porcentagem}%)`;
+
+    if (valor < -5) {
+      resultado.textContent = `${valorAbs}% mais próximo do perfil esquerdo`;
+    } else if (valor > 5) {
+      resultado.textContent = `${valorAbs}% mais próximo do perfil direito`;
+    } else {
+      resultado.textContent = `Equilíbrio entre os perfis`;
+    }
+  }
+
+  // --- GERAÇÃO DO PDF COM PDFMAKE ---
+  document.getElementById('gerarPDF').addEventListener('click', () => {
+    const perguntas = document.querySelectorAll('.pergunta h3');
+    const resultados = document.querySelectorAll('.result');
+    const vaga = document.querySelector('.vaga').textContent;
+
+    // Monta o conteúdo do PDF
+    let content = [
+      { text: 'I.V. Guindastes', style: 'header' },
+      { text: 'Avaliação de Perfil', style: 'title', margin: [0, 0, 0, 10] },
+      //{ text: `Descrição da Vaga: ${vaga}`, style: 'vaga', margin: [0, 0, 0, 20] }
+    ];
+
+    perguntas.forEach((p, i) => {
+      content.push(
+        { text: `Pergunta ${i + 1}`, style: 'questionNumber' },
+        { text: p.textContent, style: 'question' },
+        { text: `Resultado: ${resultados[i].textContent}`, style: 'answer', margin: [0, 0, 0, 15] }
+      );
+    });
+
+    const now = new Date();
+      const dataHora = now.toLocaleString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    const docDefinition = {
+
+    header: {
+      columns: [
+        { 
+          text: `Gerado em: ${dataHora}`, 
+          alignment: 'left', 
+          margin: [40, 10, 0, 0], 
+          fontSize: 9 
+        }
+      ]
+    },
+      pageSize: 'A4',
+      pageMargins: [40, 60, 40, 60],
+      content: content,
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          color: '#b40000',
+          alignment: 'center',
+          margin: [0, 0, 0, 10]
+        },
+        title: {
+          fontSize: 16,
+          bold: true,
+          alignment: 'center',
+          margin: [0, 0, 0, 20]
+        },
+        vaga: {
+          fontSize: 12,
+          italics: true,
+          color: '#333',
+          alignment: 'center'
+        },
+        questionNumber: {
+          fontSize: 13,
+          bold: true,
+          color: '#b40000'
+        },
+        question: {
+          fontSize: 11,
+          margin: [0, 5, 0, 5]
+        },
+        answer: {
+          fontSize: 11,
+          italics: true,
+          color: '#000'
+        }
+      }
+    };
+
+    pdfMake.createPdf(docDefinition).download('avaliacao-perfil.pdf');
+  });
+</script>
+
+</body>
+</html>
